@@ -3,7 +3,14 @@ from typing import Optional
 import cv2
 import numpy as np
 
-from zone import Zone
+try:
+    from zones.zone import Zone
+except ImportError:
+    try:
+        from zone import Zone
+    except ImportError:
+        from src.zones.zone import Zone
+
 
 
 class ZoneManager:

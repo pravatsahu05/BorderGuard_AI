@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+
+# Logs
+logs/
+
+# Generated outputs
+outputs/
+
+# Database & Data
+*.db
+*.sqlite
+*.sqlite3
+data/database/
+data/raw/
+data/sample/
+data/borderguard/
+
+
+# Python cache
+.pytest_cache/
+
+# Model files
+*.pt
+*.onnx
+
+# Temporary files
+*.tmp
+*.temp
