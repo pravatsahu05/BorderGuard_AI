@@ -30,6 +30,6 @@ def render_simulation(objects=None):
                     "Speed": f"{getattr(obj, 'speed', 0.0):.1f} px/s",
                 }
             )
-        st.dataframe(pd.DataFrame(data), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(data), hide_index=True)
     else:
         st.info("No active objects currently present in the sector.")

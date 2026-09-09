@@ -4,12 +4,20 @@ import uuid
 try:
     from intrusion.event import IntrusionEvent
 except (ImportError, ValueError):
-    from event import IntrusionEvent
+    try:
+        from src.intrusion.event import IntrusionEvent
+    except ImportError:
+        from event import IntrusionEvent
+
 
 try:
     from intrusion.config import INTRUSION_CONFIG
 except (ImportError, ValueError):
-    from .config import INTRUSION_CONFIG
+    try:
+        from src.intrusion.config import INTRUSION_CONFIG
+    except ImportError:
+        from config import INTRUSION_CONFIG
+
 
 
 

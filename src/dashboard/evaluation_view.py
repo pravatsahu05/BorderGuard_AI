@@ -18,6 +18,5 @@ def render_evaluation_view(
 
     st.dataframe(
         dataframe,
-        use_container_width=True,
         hide_index=True,
     )

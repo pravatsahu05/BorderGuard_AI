@@ -1,40 +1,55 @@
-# Python
+# Python & Cache
 __pycache__/
 *.py[cod]
-*.pyo
+*$py.class
+.pytest_cache/
+.coverage
 
-# Virtual environment
+# Virtual Environments
 .venv/
+.venv_gpu/
+venv/
+env/
 
-# Environment variables
+# Environment Variables & IDE
 .env
-
-# IDE
 .vscode/
+.idea/
 
-# Logs
-logs/
+# Large Model Weights & YOLO Training Runs
+runs/
+models/*.pt
+models/*.onnx
+models/*.engine
+models/*.bin
+*.pt
+*.onnx
+*.weights
 
-# Generated outputs
-outputs/
-
-# Database & Data
+# Datasets & Private Data (Hidden from public view)
+data.yaml
+data/raw/
+data/processed/
+data/database/
+data/sample/
+data/simulation/
+data/borderguard/
 *.db
 *.sqlite
 *.sqlite3
-data/database/
-data/raw/
-data/sample/
-data/borderguard/
 
+# Media Files & Large Generated Outputs
+outputs/
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+*.gif
 
-# Python cache
-.pytest_cache/
-
-# Model files
-*.pt
-*.onnx
-
-# Temporary files
+# Logs & Temporary Files
+logs/
+*.log
 *.tmp
 *.temp

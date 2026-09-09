@@ -99,20 +99,22 @@ class DashboardRepository:
     # ========================================================
 
     def get_active_alert_count(self):
-
+        """
+        Return the count of intrusions detected in the WARNING or RESTRICTED zones.
+        """
         connection = self._connect()
 
         result = connection.execute(
             """
             SELECT COUNT(*)
-            FROM alerts
-            WHERE status = 'ACTIVE'
+            FROM intrusion_events
+            WHERE current_zone IN ('WARNING', 'RESTRICTED', 'CRITICAL')
             """
         ).fetchone()
 
         connection.close()
 
-        return result[0]
+        return result[0] if result else 0
 
     # ========================================================
     # CAMERA COUNT

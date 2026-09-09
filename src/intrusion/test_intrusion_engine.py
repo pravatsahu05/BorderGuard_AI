@@ -1,4 +1,17 @@
-from intrusion_engine import IntrusionEngine
+import sys
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.append(str(BASE_DIR))
+if str(BASE_DIR / "src") not in sys.path:
+    sys.path.append(str(BASE_DIR / "src"))
+
+try:
+    from intrusion.intrusion_engine import IntrusionEngine
+except ImportError:
+    from intrusion_engine import IntrusionEngine
+
 
 
 def print_event(event):

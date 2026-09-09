@@ -7,10 +7,17 @@ class YOLODetector:
 
     def __init__(
         self,
-        model_path="yolo11n.pt",
+        model_path=None,
         confidence=0.25,
         device=None,
     ):
+
+        if model_path is None:
+            custom_model = Path(__file__).resolve().parent.parent.parent / "models" / "best.pt"
+            if custom_model.exists():
+                model_path = str(custom_model)
+            else:
+                model_path = "yolo11n.pt"
 
         self.model_path = Path(model_path)
 
@@ -19,6 +26,7 @@ class YOLODetector:
         self.device = device
 
         self.model = YOLO(str(self.model_path))
+
 
     def detect(
         self,
