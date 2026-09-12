@@ -6,9 +6,24 @@ from dashboard.simulation_controller import (
 
 
 def get_simulation_controller():
+    """
+    Return the existing simulation controller
+    for this Streamlit session.
 
-    if "simulation_controller" not in st.session_state:
+    If one does not exist, create it.
+    """
 
-        st.session_state["simulation_controller"] = SimulationController()
+    if (
+        "simulation_controller"
+        not in st.session_state
+    ):
 
-    return st.session_state["simulation_controller"]
+        st.session_state[
+            "simulation_controller"
+        ] = (
+            SimulationController()
+        )
+
+    return st.session_state[
+        "simulation_controller"
+    ]

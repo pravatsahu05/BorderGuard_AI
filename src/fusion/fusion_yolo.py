@@ -22,7 +22,6 @@ except ImportError:
     from src.fusion.detection_fusion import DetectionFusion
 
 
-
 VIDEO_PATH = "data/simulation/sample.mp4"
 
 
@@ -218,4 +217,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

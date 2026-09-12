@@ -5,8 +5,13 @@ from src.simulation.simulation_config import SimulationConfig, SIMULATION_CONFIG
 from src.simulation.simulated_object import SimulatedObject
 from src.simulation.scenarios import SCENARIOS
 from src.simulation.simulation_engine import SimulationEngine
-from src.simulation.simulation_renderer import SimulationRenderer
-from src.simulation.run_simulation import run_simulation
+
+try:
+    from src.simulation.simulation_renderer import SimulationRenderer
+    from src.simulation.run_simulation import run_simulation
+except ImportError:
+    SimulationRenderer = None
+    run_simulation = None
 
 __all__ = [
     "SimulationConfig",
@@ -17,3 +22,4 @@ __all__ = [
     "SimulationRenderer",
     "run_simulation",
 ]
+
